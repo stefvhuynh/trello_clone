@@ -1,2 +1,9 @@
 <div id="content"></div>
 
+<script>
+  window.currentUserId = <%= current_user.id %>
+
+  $(document).ready(function(){
+    TrelloClone.initialize();
+  });
+</script>

@@ -4,10 +4,17 @@ window.TrelloClone = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    TrelloClone.currentUser = new TrelloClone.Models.User({
+      id: window.currentUserId
+    });
+    
+    TrelloClone.currentUser.fetch({
+      success: function(model, response) {
+        new TrelloClone.Routers.AppRouter();
+        Backbone.history.start();
+      }
+    });
   }
 };
 
-$(document).ready(function(){
-  TrelloClone.initialize();
-});
+
