@@ -7,10 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create([
-  { name: 'Charlie Brown', 
-    email: 'charlie@brown.com', 
-    password: '123456' },
-  
+  { name: 'Charlie Brown',
+    email: 'charlie@brown.com',
+    password: '123456'
+  },
+
   { name: 'Linus Van Pelt',
     email: 'linus@vanpelt.com',
     password: '123456'
@@ -22,3 +23,14 @@ Board.create([
   { name: 'Second Board', starred: false, user_id: 1 },
   { name: 'Linus Board', starred: false, user_id: 2 }
 ])
+
+List.create([
+  { name: 'First List', order: 1, board_id: 1 },
+  { name: 'Second List', order: 2, board_id: 1 },
+  { name: 'First List', order: 1, board_id: 2 },
+  { name: 'Linus List', order: 1, board_id: 3 },
+])
+
+
+
+

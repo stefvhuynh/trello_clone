@@ -1,9 +1,8 @@
 TrelloClone.Collections.Boards = Backbone.Collection.extend({
   url: '/api/boards',
-  model: TwitterClone.Models.Tweet,
+  model: TrelloClone.Models.Board,
 
   getOrFetch: function(id) {
-    var that = this;
     var board = this.get(id);
 
     if (!board) {
@@ -11,7 +10,7 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
       board.fetch({
         success: function(model, response) {
           that.add(model);
-        },
+        }.bind(this),
 
         error: function(model, response) {
           // Will add error handling (primarily, access forbidden)

@@ -17,15 +17,14 @@ TrelloClone.Routers.AppRouter = Backbone.Router.extend({
   },
 
   boardShow: function(id) {
-    var board = TrelloClone.currentUser.boards().get(id);
+    var board = TrelloClone.currentUser.boards().getOrFetch(id);
     var view = new TrelloClone.Views.BoardShow({ model: board });
     this._swapView(view);
   },
 
   _swapView: function(view) {
-    this.currentView && this.currentview.remove();
+    this.currentView && this.currentView.remove();
     this.currentView = view;
     this.$rootEl.html(view.render().$el);
   }
-
 });
