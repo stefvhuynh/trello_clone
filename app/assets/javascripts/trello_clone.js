@@ -10,7 +10,7 @@ window.TrelloClone = {
     
     TrelloClone.currentUser.fetch({
       success: function(model, response) {
-        new TrelloClone.Routers.AppRouter();
+        new TrelloClone.Routers.AppRouter({ $rootEl: $('#content') });
         Backbone.history.start();
       }
     });
