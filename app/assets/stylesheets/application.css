@@ -13,3 +13,53 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, div, section, h1, h2, h3, ul, li, a, input, textarea {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  box-sizing: content-box;
+  outline: none;
+  background: transparent;
+  font-weight: normal;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: tahoma;
+}
+
+.clear-fix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Header */
+
+#site-header {
+  background: #1D5881;
+  color: #fff;
+}
+
+.site-header-left {
+  float: left;
+}
+
+.site-header-right {
+  float: right;
+}
+
+.site-header-left li,
+.site-header-right li {
+  float: left;
+}
+
+/* Site main */
+
+
+
+
+
