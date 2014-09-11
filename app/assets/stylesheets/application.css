@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, div, section, h1, h2, h3, ul, li, a, input, textarea {
+html, body, div, section, h1, h2, h3, ul, li, a, input, textarea, button {
   padding: 0;
   border: 0;
   margin: 0;
@@ -59,7 +59,14 @@ body {
 
 /* Site main */
 
+/* Board new */
 
+.board-new {
+  background: #fff;
+  border: 1px solid #aaa;
+}
 
-
+.board-new-form {
+  color: #000;
+}
 
