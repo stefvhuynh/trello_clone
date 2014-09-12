@@ -8,6 +8,10 @@ TrelloClone.Models.Board = Backbone.Model.extend({
 
     return this._lists;
   },
+  
+  toJSON: function() {
+    return { board: _.clone(this.attributes) };
+  },
 
   parse: function(response) {
     if (response.lists) {

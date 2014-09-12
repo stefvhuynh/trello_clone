@@ -15,6 +15,6 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var boardData = $(event.currentTarget).serializeJSON().board;
-
+    TrelloClone.currentUser.boards().create(boardData);
   }
 });

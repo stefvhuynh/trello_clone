@@ -15,6 +15,13 @@ class Api::BoardsController < ApplicationController
   end
 
   def create
+    board = current_user.boards.build(board_params)
+    
+    if board.save
+      render json: board
+    else
+      render json: board.errors.full_messages, status: 422
+    end
   end
 
   def update
