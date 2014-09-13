@@ -41,6 +41,14 @@ Card.create([
   { name: 'First Card', order: 1, list_id: 4 },
 ])
 
+Checklist.create([
+  { name: 'First Checklist', order: 1, card_id: 1 },
+  { name: 'Second Checklist', order: 2, card_id: 1 },
+  { name: 'First Checklist', order: 1, card_id: 2 },
+  { name: 'First Checklist', order: 1, card_id: 3 },
+  { name: 'First Checklist', order: 1, card_id: 4 }
+])
+
 
 
 

@@ -3,7 +3,7 @@ TrelloClone.Models.Card = Backbone.Model.extend({
   
   checklists: function() {
     if (!this._checklists) {
-      this._checklists = new TrelloClone.Collections.Checklist();
+      this._checklists = new TrelloClone.Collections.Checklists();
     }
     
     return this._checklists;
@@ -15,7 +15,7 @@ TrelloClone.Models.Card = Backbone.Model.extend({
   
   parse: function(response) {
     if (response.checklists) {
-      this.checklists().set(response.checklists);
+      this.checklists().set(response.checklists, { parse: true });
       delete response.checklists;
     }
     

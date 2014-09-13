@@ -6,14 +6,16 @@
   <div class="modal-content">
     <h3>
       <%= card.escape('name') %> 
-      <h5> in list </h5> 
-      <h4> <%= card.escape('list_id') %></h4>
+      <h6> in list </h6> 
+      <h5> <%= card.escape('list_id') %></h5>
     </h3>
     
     <span class="exit hide-modal">&times;</span>
     <br>
     
-    <h5>Description</h5>
+    <h6>Description</h6>
     <p><%= card.escape('description') %></p>
+    
+    <ul class="checklists-list"></ul>
   </div>
 </div>
