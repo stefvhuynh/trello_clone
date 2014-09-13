@@ -8,13 +8,26 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
   },
   
   initialize: function() {
+    this.subviews = [];
     this.listenTo(this.model.cards(), 'sync add remove', this.render);
   },
   
   render: function() {
+    var that = this;
     var content = this.template({ list: this.model });
     this.$el.html(content);
+    
+    this.model.cards().each(function(card) {
+      that.$('.cards-list').append(that.renderCard(card));
+    });
+    
     return this;
+  },
+  
+  renderCard: function(card) {
+    var subview = new TrelloClone.Views.CardShow({ model: card });
+    this.subviews.push(subview);
+    return subview.render().$el;
   },
   
   showNewCardForm: function(event) {
@@ -30,6 +43,14 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     cardData.order = this.model.cards().last().get('order') + 1;
     cardData.list_id = this.model.id;
     this.model.cards().create(cardData);
+  },
+  
+  remove: function() {
+    this.subviews.each(function(subview) {
+      subview.remove();
+    });
+    
+    Backbone.View.prototype.remove.call(this);
   }
 });
 
