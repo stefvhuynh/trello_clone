@@ -2,8 +2,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
   template: JST['boards/show'],
   
   events: {
-    // 'click .new-list': 'renderListNew'
-    'submit .new-list-form': 'submitNewList'
+    'click .new-list': 'renderListNew'
   },
 
   initialize: function() {
@@ -15,7 +14,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     this.$el.html(content);
     return this;
   },
-  
+
   submitNewList: function(event) {
     event.preventDefault();
     var listData = $(event.currentTarget).serializeJSON().list;
@@ -23,11 +22,4 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     listData.board_id = this.model.id;
     this.model.lists().create(listData);
   }
-  
-  // renderListNew: function(event) {
-  //   event.preventDefault();
-  //
-  //   var view = new TrelloClone.Views.ListNew({ board: this.model });
-  //   this.$('.new-list').html(view.render().$el);
-  // }
 });
