@@ -47,7 +47,13 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     event.preventDefault();
     
     var listData = $(event.currentTarget).serializeJSON().list;
-    listData.order = this.model.lists().last().get('order') + 1;
+    
+    if (this.model.lists().isEmpty()) {
+      listData.order = 1;
+    } else {
+      listData.order = this.model.lists().last().get('order') + 1;
+    }
+    
     listData.board_id = this.model.id;
     this.model.lists().create(listData);
   },

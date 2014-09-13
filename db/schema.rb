@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913174427) do
+ActiveRecord::Schema.define(version: 20140913202233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20140913174427) do
   end
 
   add_index "cards", ["name"], name: "index_cards_on_name", using: :btree
+
+  create_table "checklists", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "order",      null: false
+    t.integer  "card_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "checklists", ["name"], name: "index_checklists_on_name", using: :btree
 
   create_table "lists", force: true do |t|
     t.string   "name",       null: false

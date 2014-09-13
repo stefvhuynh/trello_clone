@@ -5,5 +5,9 @@ json.lists @board.lists do |list|
   
   json.cards list.cards do |card|
     json.extract! card, :id, :name, :description, :order, :list_id
+    
+    json.checklists card.checklists do |checklist|
+      json.extract! checklist, :id, :name, :card_id
+    end
   end
 end

@@ -47,13 +47,19 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     event.preventDefault();
     
     var cardData = $(event.currentTarget).serializeJSON().card;
-    cardData.order = this.model.cards().last().get('order') + 1;
+    
+    if (this.model.cards().isEmpty()) {
+      cardData.order = 1;
+    } else {
+      cardData.order = this.model.cards().last().get('order') + 1;
+    }
+    
     cardData.list_id = this.model.id;
     this.model.cards().create(cardData);
   },
   
   remove: function() {
-    this.subviews.each(function(subview) {
+    this.subviews.forEach(function(subview) {
       subview.remove();
     });
     
