@@ -1,9 +1,5 @@
 <h3><%= list.escape('name') %></h3>
-<ul>
-  <% list.cards().each(function(card) { %>
-    <li><%= card.escape('name') %></li>
-  <% }) %>
-</ul>
+<ul class="cards-list"></ul>
 
 <div class="new-card">
   <div class="new-card-button">Add a card...</div>
