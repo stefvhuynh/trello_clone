@@ -1,5 +1,9 @@
-<ul>
+<h2>My Boards</h2>
+
+<ul class="boards-list clear-fix">
   <% boards.each(function(board) { %>
-    <li><a href="#boards/<%= board.id %>"><%= board.escape('name') %></a></li>
+    <li class="board">
+      <a href="#boards/<%= board.id %>"><%= board.escape('name') %></a>
+    </li>
   <% }); %>
 </ul>

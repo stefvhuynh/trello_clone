@@ -20,16 +20,26 @@ h5, h6, ul, li, a, input, textarea, button {
   border: 0;
   margin: 0;
   font: inherit;
+  color: inherit;
   box-sizing: content-box;
   outline: none;
   background: transparent;
-  font-weight: normal;
+  font-weight: none;
   text-decoration: none;
   list-style: none;
 }
 
 body {
-  font-family: tahoma;
+  font-family: sans-serif;
+  background: rgb(35, 113, 159);
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
 }
 
 .clear-fix:after {
@@ -69,8 +79,30 @@ body {
 /* Header */
 
 #site-header {
-  background: #1D5881;
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
+  position: relative;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+#site-header .logo {
+  position: absolute;
+  left: 50%;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 12px;
+  margin: 6px;
+  opacity: 0.5;
+  transition: 0.2s;
+  font-style: italic;
+  font-size: 20px;
+}
+
+#site-header .logo:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .site-header-left {
@@ -82,14 +114,40 @@ body {
   position: relative;
 }
 
-.site-header-left li,
-.site-header-right li {
+#site-header li {
   float: left;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #2D6286;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+#site-header .site-header-left li {
+  margin-left: 10px;
+}
+
+#site-header .site-header-right li {
+  margin-right: 10px;
+}
+
+#site-header li:hover {
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+#site-header #search-bar {
+  cursor: text;
 }
 
 .site-header-right .right-dropdown {
   clear: both;
   position: absolute;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ddd;
   top: 20px;
   right: 0;
   color: #000;
@@ -99,20 +157,108 @@ body {
 
 /* ----- Boards ----- */
 
-/* Board new */
+/* Board index */
 
-.board-new {
-  background: #fff;
-  border: 1px solid #aaa;
+.boards-index h2 {
+  color: #fff;
 }
+
+.board {
+  float: left;
+}
+
+.board a {
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  background: #1D5A89;
+  padding: 15px;
+  height: 80px;
+  width: 220px;
+  border-radius: 5px;
+  border: 1px solid #507E9B;
+  margin: 7px;
+}
+
+.board a:hover {
+  background: #164473;
+}
+
+/* Board new */
 
 .board-new-form {
   color: #000;
 }
 
+/* Board show */
+
+.board-show > h2 {
+  color: #fff;
+}
+
 /* ----- Lists ----- */
 
+/* List show */
+
+.list {
+  float: left;
+  width: 250px;
+  background: #ddd;
+  margin: 20px 5px;
+  border-radius: 5px;
+  border: 1px solid #8FACBF;
+}
+
+.list h3 {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+/* List new */
+
+.new-list {
+  float: right;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.new-list:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+}
+
 /* ----- Cards ----- */
+
+.card {
+  background: #fff;
+  padding: 10px;
+  margin: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 #bbb;
+}
+
+.card:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+.new-card {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.new-card:hover {
+  cursor: pointer;
+  background: #aaa;
+}
 
 .card-modal h5,
 .card-modal h6 {

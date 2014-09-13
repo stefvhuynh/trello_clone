@@ -1,6 +1,7 @@
 TrelloClone.Views.ListShow = Backbone.View.extend({
   template: JST['lists/show'],
   tagName: 'li',
+  className: 'list',
   
   events: {
     'click .new-card-button': 'showNewCardForm',

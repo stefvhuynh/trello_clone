@@ -16,6 +16,7 @@ TrelloClone.Views.HeaderShow = Backbone.View.extend({
   renderBoardNew: function(event) {
     event.preventDefault();
     var view = new TrelloClone.Views.BoardNew();
-    this.$('.right-dropdown').html(view.render().$el);
+    this.$('.right-dropdown').html(view.render().$el)
+      .removeClass('display-off');
   }
 });

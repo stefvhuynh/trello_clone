@@ -24,5 +24,13 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
     });
     
     this.remove();
+  },
+  
+  remove: function() {
+    $('.right-dropdown').addClass('display-off');
+    Backbone.View.prototype.remove.call(this);
   }
 });
+
+
+
