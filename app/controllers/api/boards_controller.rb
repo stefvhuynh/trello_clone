@@ -1,16 +1,17 @@
 class Api::BoardsController < ApplicationController
 
   def index
-    render json: current_user.boards
+    @boards = current_user.boards
+    render :index
   end
 
   def show
-    @board = Board.includes(:lists).find(params[:id])
+    @board = Board.includes(lists: :cards).find(params[:id])
 
     if @board.user_id == current_user.id
       render :show
     else
-      render json: 'Access forbidden', status: 403
+      render nothing: true, status: 403
     end
   end
 
@@ -18,7 +19,7 @@ class Api::BoardsController < ApplicationController
     board = current_user.boards.build(board_params)
     
     if board.save
-      render json: board
+      render nothing: true, status: 200
     else
       render json: board.errors.full_messages, status: 422
     end

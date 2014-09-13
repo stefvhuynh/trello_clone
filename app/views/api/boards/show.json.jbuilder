@@ -1,2 +1,6 @@
-json.extract! @board, :name, :starred, :created_at, :updated_at, :user_id
-json.lists @board.lists
+json.extract! @board, :id, :name, :starred, :user_id
+
+json.lists @board.lists do |list|
+  json.extract! list, :id, :name, :order, :board_id
+  json.cards list.cards
+end

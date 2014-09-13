@@ -31,6 +31,16 @@ List.create([
   { name: 'Linus List', order: 1, board_id: 3 },
 ])
 
+Card.create([
+  { name: 'First Card', order: 1, list_id: 1 },
+  { name: 'Second Card', order: 2, list_id: 1 },
+  { name: 'First Card', order: 1, list_id: 2 },
+  { name: 'First Card', order: 1, list_id: 3 },
+  { name: 'Second Card', order: 2, list_id: 3 },
+  { name: 'Third Card', order: 3, list_id: 3 },
+  { name: 'First Card', order: 1, list_id: 4 },
+])
+
 
 
 

@@ -7,14 +7,27 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
   },
 
   initialize: function() {
+    this.subviews = [];
     this.listenTo(this.model, 'sync change', this.render);
-    this.listenTo(this.model.lists(), 'sync add remove change', this.render);
+    this.listenTo(this.model.lists(), 'add remove change', this.render);
   },
 
   render: function() {
+    var that = this;
     var content = this.template({ board: this.model });
     this.$el.html(content);
+    
+    this.model.lists().each(function(list) {
+      that.$('.lists-list').append(that.renderList(list));
+    });
+    
     return this;
+  },
+  
+  renderList: function(list) {
+    var subview = new TrelloClone.Views.ListShow({ model: list });
+    this.subviews.push(subview);
+    return subview.render().$el;
   },
   
   showNewListForm: function(event) {
@@ -30,6 +43,14 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     listData.order = this.model.lists().last().get('order') + 1;
     listData.board_id = this.model.id;
     this.model.lists().create(listData);
+  },
+  
+  remove: function() {
+    this.subviews.each(function(subview) { 
+      subview.remove(); 
+    });
+    
+    Backbone.View.prototype.remove.call(this);
   }
 });
 
