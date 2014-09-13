@@ -2,9 +2,8 @@
 <main id="content">Loading...</main>
 
 <script>
-  window.currentUserId = <%= current_user.id %>
-
   $(document).ready(function(){
+    window.currentUserId = <%= current_user.id %>
     TrelloClone.initialize();
   });
 </script>
