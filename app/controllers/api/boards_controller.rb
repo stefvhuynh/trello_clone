@@ -16,10 +16,10 @@ class Api::BoardsController < ApplicationController
   end
 
   def create
-    board = current_user.boards.build(board_params)
+    @board = current_user.boards.build(board_params)
     
-    if board.save
-      render nothing: true, status: 200
+    if @board.save
+      render :show
     else
       render json: board.errors.full_messages, status: 422
     end

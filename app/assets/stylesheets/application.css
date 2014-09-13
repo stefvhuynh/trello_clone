@@ -114,3 +114,10 @@ body {
 
 /* ----- Cards ----- */
 
+.card-modal h4,
+.card-modal h5 {
+  display: inline;
+}
+
+
+
