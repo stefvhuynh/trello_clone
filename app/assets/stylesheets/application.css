@@ -14,7 +14,8 @@
  *= require_self
  */
 
-html, body, div, section, h1, h2, h3, ul, li, a, input, textarea, button {
+html, body, div, section, h1, h2, h3, h4, 
+h5, ul, li, a, input, textarea, button {
   padding: 0;
   border: 0;
   margin: 0;
@@ -41,6 +42,30 @@ body {
   display: none;
 }
 
+.modal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #eee;
+  border-radius: 5px;
+}
+
+/* ----- Pages ----- */
+
 /* Header */
 
 #site-header {
@@ -54,6 +79,7 @@ body {
 
 .site-header-right {
   float: right;
+  position: relative;
 }
 
 .site-header-left li,
@@ -61,7 +87,17 @@ body {
   float: left;
 }
 
+.site-header-right .right-dropdown {
+  clear: both;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  color: #000;
+}
+
 /* Site main */
+
+/* ----- Boards ----- */
 
 /* Board new */
 
@@ -73,4 +109,8 @@ body {
 .board-new-form {
   color: #000;
 }
+
+/* ----- Lists ----- */
+
+/* ----- Cards ----- */
 

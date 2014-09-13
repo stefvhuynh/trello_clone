@@ -3,7 +3,8 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
   className: 'board-new',
 
   events: {
-    'submit .board-new-form': 'submit'
+    'submit .board-new-form': 'submit',
+    'click .exit': 'remove'
   },
 
   render: function() {

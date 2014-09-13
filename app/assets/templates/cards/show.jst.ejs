@@ -1,3 +1,18 @@
-<div><%= card.get('name') %></div>
+<div class="show-modal"><%= card.escape('name') %></div>
 
-<!-- Modal time -->
+<div class="card-modal modal display-off">
+  <div class="modal-overlay hide-modal"></div>
+  
+  <div class="modal-content">
+    <h3>
+      <%= card.escape('name') %> 
+      <h5> in list </h5> 
+      <h4> <%= card.escape('list_id') %></h4>
+    </h3>
+    
+    <span class="exit hide-modal">&times;</span>
+    
+    <h5>Description</h5>
+    <p><%= card.escape('description') %></p>
+  </div>
+</div>

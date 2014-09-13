@@ -4,6 +4,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
   
   events: {
     'click .new-card-button': 'showNewCardForm',
+    'click .new-card .exit': 'hideNewCardForm',
     'submit .new-card-form': 'submitNewCard'
   },
   
@@ -34,6 +35,12 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     event.preventDefault();
     this.$('.new-card-button').addClass('display-off');
     this.$('.new-card-form').removeClass('display-off');
+  },
+  
+  hideNewCardForm: function(event) {
+    event.preventDefault();
+    this.$('.new-card-button').removeClass('display-off');
+    this.$('.new-card-form').addClass('display-off');
   },
   
   submitNewCard: function(event) {
