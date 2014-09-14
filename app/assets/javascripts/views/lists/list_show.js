@@ -31,6 +31,15 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
       },
       deactivate: function(event, ui) {
         $(ui.item).removeClass('sortable-active');
+      },
+      update: function(event, ui) {
+        var newOrder = $(this).sortable('toArray');
+        
+        that.model.cards().each(function(card) {
+          var order = parseInt(newOrder.shift().slice(1));
+          // Need to make a mass save function to cut down on requests
+          card.save({ order: order }, { patch: true });
+        });
       }
     });
     

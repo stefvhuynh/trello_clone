@@ -34,8 +34,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
         var newOrder = $(this).sortable('toArray');
         
         that.model.lists().each(function(list) {
-          var order = parseInt(newOrder.shift().slice(1));
-          
+          var order = parseInt(newOrder.shift().slice(1));   
           // Need to make a mass save function to cut down on requests
           list.save({ order: order }, { patch: true });
         });
