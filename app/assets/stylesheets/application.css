@@ -407,6 +407,17 @@ textarea {
 
 /* Checklist show */
 
+.checklist-name:hover {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.checklist-name:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
+
 .checklist .progress-bar {
   margin: 15px 0;
   height: 10px;
