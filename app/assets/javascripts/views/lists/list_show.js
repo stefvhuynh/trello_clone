@@ -12,14 +12,14 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
   initialize: function() {
     this.subviews = [];
     this.listenTo(this.model, 'sync change', this.render);
-    this.listenTo(this.model.cards(), 'sync add remove', this.render);
+    this.listenTo(this.model.cards(), 'add remove', this.render);
   },
   
   render: function() {
     var that = this;
     var content = this.template({ list: this.model });
     this.$el.html(content);
-    this.$el.attr('id', 'o' + this.model.get('order'));
+    this.$el.attr('id', 'l' + this.model.get('order'));
     
     this.model.cards().each(function(card) {
       that.$('.cards-list').append(that.renderCard(card));
