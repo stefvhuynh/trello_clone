@@ -25,26 +25,10 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
       that.$('.cards-list').append(that.renderCard(card));
     });
     
-    this.$('.cards-list').sortable({
-      activate: function(event, ui) {
-        $(ui.item).addClass('sortable-active');
-      },
-      deactivate: function(event, ui) {
-        $(ui.item).removeClass('sortable-active');
-      },
-      update: function(event, ui) {
-        var newOrder = $(this).sortable('toArray').map(function(order) {
-          return parseInt(order.slice(1));
-        });
-        
-        for (var i = 0; i < newOrder.length; i++) {
-          var card = that.model.cards().get(newOrder[i]);
-          card.save({ order: i });
-        }
-        
-        that.model.cards().sort();
-      }
-    });
+    TrelloClone.Utilities.Order.bindSortable(
+      this.$('.cards-list'), 
+      this.model.cards()
+    );
     
     return this;
   },
@@ -79,7 +63,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     }
     
     cardData.list_id = this.model.id;
-    this.model.cards().create(cardData);
+    this.model.cards().create(cardData, { wait: true });
   },
   
   remove: function() {

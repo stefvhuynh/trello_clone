@@ -3,6 +3,7 @@ window.TrelloClone = {
   Collections: {},
   Views: {},
   Routers: {},
+  Utilities: {},
   
   initialize: function() {
     TrelloClone.currentUser = new TrelloClone.Models.User({

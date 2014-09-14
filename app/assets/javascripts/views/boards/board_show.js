@@ -23,26 +23,10 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
       that.$('.lists-list').append(that.renderList(list));
     });
     
-    this.$('.lists-list').sortable({
-      activate: function(event, ui) {
-        ui.item.addClass('sortable-active');
-      },
-      deactivate: function(event, ui) {
-        ui.item.removeClass('sortable-active');
-      },
-      update: function(event, ui) {
-        var newOrder = $(this).sortable('toArray').map(function(order) {
-          return parseInt(order.slice(1));
-        });
-        
-        for (var i = 0; i < newOrder.length; i++) {
-          var list = that.model.lists().get(newOrder[i]);
-          list.save({ order: i });
-        }
-        
-        that.model.lists().sort();
-      }
-    });
+    TrelloClone.Utilities.Order.bindSortable(
+      this.$('.lists-list'), 
+      this.model.lists()
+    );
     
     $('body').removeClass('home-page');
     return this;
@@ -78,7 +62,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     }
     
     listData.board_id = this.model.id;
-    this.model.lists().create(listData);
+    this.model.lists().create(listData, { wait: true });
   },
   
   remove: function() {
@@ -89,5 +73,3 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this);
   }
 });
-
-
