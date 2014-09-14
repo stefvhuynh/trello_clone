@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require jquery-ui/sortable
  *= require_self
  */
 
@@ -31,6 +32,7 @@ h5, h6, ul, li, a, input, textarea, button {
 body {
   font-family: sans-serif;
   background: rgb(35, 113, 159);
+  font-size: 14px;
 }
 
 .home-page {
@@ -39,27 +41,18 @@ body {
 
 h2 {
   font-weight: bold;
+  font-size: 16px;
 }
 
 h3 {
   font-weight: bold;
+  font-size: 16px;
 }
 
 textarea {
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
-  font-size: 14px;
-}
-
-.clear-fix:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.display-off {
-  display: none;
 }
 
 .exit {
@@ -98,7 +91,6 @@ textarea {
   background: #1F8D1C;
   color: #fff;
   font-weight: bold;
-  font-size: 14px;
   border-radius: 5px;
   border: 1px solid #46A045;
   padding: 8px 18px;
@@ -107,6 +99,23 @@ textarea {
 .green-button:hover {
   cursor: pointer;
   background: #1D7D15;
+}
+
+/* Utilities */
+
+.clear-fix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.display-off {
+  display: none;
+}
+
+.sortable-active {
+  transform: rotate(5deg);
+  box-shadow: 5px 5px 5px #555;
 }
 
 /* ----- Pages ----- */
@@ -118,7 +127,6 @@ textarea {
   color: #fff;
   position: relative;
   font-weight: bold;
-  font-size: 14px;
   margin-bottom: 30px;
 }
 
@@ -193,10 +201,6 @@ textarea {
 
 /* Board index */
 
-.boards-index h2 {
-  color: #fff;
-}
-
 .board {
   float: left;
 }
@@ -230,6 +234,10 @@ textarea {
   color: #fff;
 }
 
+.lists-list {
+  float: left;
+}
+
 /* ----- Lists ----- */
 
 /* List show */
@@ -248,6 +256,17 @@ textarea {
   padding-bottom: 0;
 }
 
+.list h3:hover {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.list h3:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
+
 /* List new */
 
 .new-list {
@@ -261,7 +280,6 @@ textarea {
   width: 230px;
   background: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
   transition: 0.2s;
 }
 
@@ -293,7 +311,6 @@ textarea {
   background: #fff;
   padding: 10px;
   margin: 10px;
-  font-size: 14px;
   border-radius: 5px;
   box-shadow: 0 1px 0 #bbb;
 }
@@ -301,6 +318,12 @@ textarea {
 .card:hover {
   cursor: pointer;
   background: #eee;
+}
+
+.card:active {
+  cursor: move;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
 }
 
 .new-card-button {

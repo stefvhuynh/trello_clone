@@ -23,6 +23,21 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
       that.$('.lists-list').append(that.renderList(list));
     });
     
+    this.$('.lists-list').sortable({
+      activate: function(event, ui) {
+        ui.item.addClass('sortable-active');
+      },
+      deactivate: function(event, ui) {
+        ui.item.removeClass('sortable-active');
+      },
+      update: function(event, ui) {
+        // var listId = parseInt(ui.item[0].id.slice(1));
+        // var list = that.model.lists().get(listId);
+        var data = $(this).sortable('serialize');
+        console.log(data);
+      }
+    });
+    
     $('body').removeClass('home-page');
     return this;
   },
