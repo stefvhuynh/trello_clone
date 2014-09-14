@@ -49,6 +49,18 @@ h3 {
   font-size: 16px;
 }
 
+h5 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #777;
+  text-decoration: underline;
+}
+
+h6 {
+  font-size: 14px;
+  color: #777;
+}
+
 textarea {
   background: #fff;
   box-sizing: border-box;
@@ -81,7 +93,7 @@ textarea {
 
 .modal-content {
   position: absolute;
-  top: 50%;
+  top: 50px;
   left: 50%;
   background: #eee;
   border-radius: 5px;
@@ -307,15 +319,18 @@ textarea {
 
 /* ----- Cards ----- */
 
-.card {
-  background: #fff;
+
+/* Card show */
+
+.card-name {
   padding: 10px;
+  background: #fff;
   margin: 10px;
   border-radius: 5px;
   box-shadow: 0 1px 0 #bbb;
 }
 
-.card:hover {
+.card-name:hover {
   cursor: pointer;
   background: #eee;
 }
@@ -325,6 +340,47 @@ textarea {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
 }
+
+.card-modal .modal-main {
+  margin-top: 20px;
+}
+
+.card-modal .left-section {
+  float: left;
+  width: 500px;
+}
+
+.card-modal .right-section {
+  float: right;
+  width: 120px;
+}
+
+.card-modal .modal-content {
+  width: 660px;
+  height: 460px;
+  margin-left: -350px;
+  padding: 20px;
+}
+
+.card-modal .modal-content > h3,
+.card-modal .modal-content > h5,
+.card-modal .modal-content > h6 {
+  display: inline;
+}
+
+.card-modal .modal-content h3,
+.card-modal .modal-content h5,
+.card-modal .modal-content h6 {
+  padding-left: 0;
+}
+
+.card-modal .modal-content > .exit {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+/* Card new */
 
 .new-card-button {
   color: rgba(0, 0, 0, 0.4);
@@ -348,10 +404,92 @@ textarea {
   margin-top: 0;
 }
 
-.card-modal h5,
-.card-modal h6 {
-  display: inline;
+/* ----- Checklists ----- */
+
+/* Checklist show */
+
+.checklist .progress-bar {
+  margin: 15px 0;
+  height: 10px;
+  border-radius: 5px;
+  background: #ccc;
 }
+
+/* Checklist new */
+
+.new-checklist {
+  position: relative;
+}
+
+.new-checklist-button {
+  font-weight: bold;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #777;
+  background: #F4F4F4;
+  margin-top: 10px;
+}
+
+.new-checklist-button:hover {
+  cursor: pointer;
+  background: #1777B1;
+  color: #fff;
+  border: 1px solid #1672AB;
+}
+
+.new-checklist-form {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 250px;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #888;
+  padding: 10px;
+}
+
+.new-checklist-form h6 {
+  text-align: center;
+  border-bottom: 1px solid #777;
+  padding-bottom: 10px;
+}
+
+.new-checklist-form .exit {
+  font-size: 20px;
+  font-weight: normal;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.new-checklist-form label,
+.new-checklist-form input[type="text"] {
+  display: block;
+  margin: 10px 0;
+}
+
+.new-checklist-form label {
+  font-weight: bold;
+}
+
+.new-checklist-form input[type="text"] {
+  border: 1px solid #777;
+  border-radius: 5px;
+  background: #ddd;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.new-checklist-form input[type="text"]:focus {
+  background: #fff;
+  border: 1px solid #135F93;
+  box-shadow: 0 0 5px #1774AA;
+}
+
+
 
 
 

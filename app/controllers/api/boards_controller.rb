@@ -1,10 +1,5 @@
 class Api::BoardsController < ApplicationController
 
-  # def index
-  #   @boards = current_user.boards
-  #   render :index
-  # end
-
   def show
     @board = Board.includes(lists: [cards: :checklists]).find(params[:id])
 

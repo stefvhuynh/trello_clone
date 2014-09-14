@@ -1,0 +1,1 @@
+json.extract! @checklist, :id, :name, :order, :card_id

@@ -1,21 +1,48 @@
-<div class="show-modal"><%= card.escape('name') %></div>
+<div class="card-name show-modal"><%= card.escape('name') %></div>
 
 <div class="card-modal modal display-off">
   <div class="modal-overlay hide-modal"></div>
   
   <div class="modal-content">
+    <span class="exit hide-modal">&times;</span>
     <h3>
       <%= card.escape('name') %> 
       <h6> in list </h6> 
       <h5> <%= card.escape('list_id') %></h5>
     </h3>
     
-    <span class="exit hide-modal">&times;</span>
-    <br>
+    <main class="modal-main clear-fix">
+      <section class="left-section">
+        <div class="description">
+          <h6>Description</h6>
+          <p><%= card.escape('description') %></p>
+        </div>
     
-    <h6>Description</h6>
-    <p><%= card.escape('description') %></p>
+        <ul class="checklists-list"></ul>
+      </section>
     
-    <ul class="checklists-list"></ul>
+      <section class="right-section">
+        <h3>Add</h3>
+        <ul>
+          <li class="new-checklist">
+            <div class="new-checklist-button">Checklist</div>
+            
+            <form class="new-checklist-form display-off">
+              <h6>Add Checklist</h6>
+              <span class="exit">&times;</span>
+              
+              <label for="new-checklist-title">Title</label>
+              <input id="new-checklist-title" 
+                type="text" 
+                name="checklist[name]"
+                placeholder="Add a checklist...">
+                
+              <button class="green-button">Add</button>
+            </form>
+          </li>
+        </ul>
+      </section>
+    </main>
+    
   </div>
 </div>
