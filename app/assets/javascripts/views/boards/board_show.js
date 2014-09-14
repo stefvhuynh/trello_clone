@@ -11,7 +11,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
   initialize: function() {
     this.subviews = [];
     this.listenTo(this.model, 'sync change', this.render);
-    this.listenTo(this.model.lists(), 'add remove change', this.render);
+    this.listenTo(this.model.lists(), 'add remove', this.render);
   },
 
   render: function() {
@@ -31,10 +31,14 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
         ui.item.removeClass('sortable-active');
       },
       update: function(event, ui) {
-        // var listId = parseInt(ui.item[0].id.slice(1));
-        // var list = that.model.lists().get(listId);
-        var data = $(this).sortable('serialize');
-        console.log(data);
+        var newOrder = $(this).sortable('toArray');
+        
+        that.model.lists().each(function(list) {
+          var order = parseInt(newOrder.shift().slice(1));
+          
+          // Need to make a mass save function to cut down on requests
+          list.save({ order: order }, { patch: true });
+        });
       }
     });
     

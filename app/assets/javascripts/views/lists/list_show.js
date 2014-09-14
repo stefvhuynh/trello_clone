@@ -19,7 +19,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     var that = this;
     var content = this.template({ list: this.model });
     this.$el.html(content);
-    this.$el.attr('id', 'order-' + this.model.get('order'));
+    this.$el.attr('id', 'o' + this.model.get('order'));
     
     this.model.cards().each(function(card) {
       that.$('.cards-list').append(that.renderCard(card));
