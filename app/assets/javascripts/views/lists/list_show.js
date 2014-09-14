@@ -19,7 +19,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     var that = this;
     var content = this.template({ list: this.model });
     this.$el.html(content);
-    this.$el.attr('id', 'l' + this.model.get('order'));
+    this.$el.attr('id', 'l' + this.model.id);
     
     this.model.cards().each(function(card) {
       that.$('.cards-list').append(that.renderCard(card));
@@ -33,13 +33,16 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
         $(ui.item).removeClass('sortable-active');
       },
       update: function(event, ui) {
-        var newOrder = $(this).sortable('toArray');
-        
-        that.model.cards().each(function(card) {
-          var order = parseInt(newOrder.shift().slice(1));
-          // Need to make a mass save function to cut down on requests
-          card.save({ order: order }, { patch: true });
+        var newOrder = $(this).sortable('toArray').map(function(order) {
+          return parseInt(order.slice(1));
         });
+        
+        for (var i = 0; i < newOrder.length; i++) {
+          var card = that.model.cards().get(newOrder[i]);
+          card.save({ order: i });
+        }
+        
+        that.model.cards().sort();
       }
     });
     

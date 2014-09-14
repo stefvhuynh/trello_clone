@@ -18,7 +18,7 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
     var that = this;
     var content = this.template({ card: this.model });
     this.$el.html(content);
-    this.$el.attr('id', 'k' + this.model.get('order'));
+    this.$el.attr('id', 'k' + this.model.id);
     
     this.model.checklists().each(function(checklist) {
       that.$('.checklists-list').append(that.renderChecklist(checklist));
