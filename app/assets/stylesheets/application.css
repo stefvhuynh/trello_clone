@@ -34,12 +34,23 @@ body {
   background: rgb(35, 113, 159);
 }
 
+.home-page {
+  background: #fff;
+}
+
 h2 {
   font-weight: bold;
 }
 
 h3 {
   font-weight: bold;
+}
+
+textarea {
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
 .clear-fix:after {
@@ -50,6 +61,16 @@ h3 {
 
 .display-off {
   display: none;
+}
+
+.exit {
+  font-size: 30px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.exit:hover {
+  cursor: pointer;
 }
 
 .modal {
@@ -74,12 +95,26 @@ h3 {
   border-radius: 5px;
 }
 
+.green-button {
+  background: #1F8D1C;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #46A045;
+  padding: 8px 18px;
+}
+
+.green-button:hover {
+  cursor: pointer;
+  background: #1D7D15;
+}
+
 /* ----- Pages ----- */
 
 /* Header */
 
 #site-header {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(20, 98, 144);
   color: #fff;
   position: relative;
   font-weight: bold;
@@ -94,6 +129,7 @@ h3 {
   line-height: 30px;
   padding: 0 12px;
   margin: 6px;
+  margin-left: -34px;
   opacity: 0.5;
   transition: 0.2s;
   font-style: italic;
@@ -153,8 +189,6 @@ h3 {
   color: #000;
 }
 
-/* Site main */
-
 /* ----- Boards ----- */
 
 /* Board index */
@@ -181,7 +215,7 @@ h3 {
 }
 
 .board a:hover {
-  background: #164473;
+  background: #184675;
 }
 
 /* Board new */
@@ -249,15 +283,27 @@ h3 {
   background: #eee;
 }
 
-.new-card {
+.new-card-button {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.4);
   padding: 10px;
 }
 
-.new-card:hover {
+.new-card-button:hover {
   cursor: pointer;
   background: #aaa;
+}
+
+.new-card textarea {
+  height: 80px;
+  width: 230px;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.new-card button {
+  margin: 10px;
+  margin-top: 0;
 }
 
 .card-modal h5,

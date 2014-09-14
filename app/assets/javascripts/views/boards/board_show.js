@@ -23,6 +23,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
       that.$('.lists-list').append(that.renderList(list));
     });
     
+    $('body').removeClass('home-page');
     return this;
   },
   
