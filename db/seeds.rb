@@ -49,6 +49,14 @@ Checklist.create([
   { name: 'First Checklist', order: 0, card_id: 4 }
 ])
 
+Item.create([
+  { name: 'First Item', order: 0, completed: false, checklist_id: 1 },
+  { name: 'Second Item', order: 1, completed: false, checklist_id: 1 },
+  { name: 'First Item', order: 0, completed: false, checklist_id: 2 },
+  { name: 'First Item', order: 0, completed: false, checklist_id: 3 },
+  { name: 'First Item', order: 0, completed: false, checklist_id: 4 },
+])
+
 
 
 
