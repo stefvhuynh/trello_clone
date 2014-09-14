@@ -25,28 +25,28 @@ Board.create([
 ])
 
 List.create([
-  { name: 'First List', order: 1, board_id: 1 },
-  { name: 'Second List', order: 2, board_id: 1 },
-  { name: 'First List', order: 1, board_id: 2 },
-  { name: 'Linus List', order: 1, board_id: 3 },
+  { name: 'First List', order: 0, board_id: 1 },
+  { name: 'Second List', order: 1, board_id: 1 },
+  { name: 'First List', order: 0, board_id: 2 },
+  { name: 'Linus List', order: 0, board_id: 3 },
 ])
 
 Card.create([
-  { name: 'First Card', order: 1, list_id: 1 },
-  { name: 'Second Card', order: 2, list_id: 1 },
-  { name: 'First Card', order: 1, list_id: 2 },
-  { name: 'First Card', order: 1, list_id: 3 },
-  { name: 'Second Card', order: 2, list_id: 3 },
-  { name: 'Third Card', order: 3, list_id: 3 },
-  { name: 'First Card', order: 1, list_id: 4 },
+  { name: 'First Card', order: 0, list_id: 1 },
+  { name: 'Second Card', order: 1, list_id: 1 },
+  { name: 'First Card', order: 0, list_id: 2 },
+  { name: 'First Card', order: 0, list_id: 3 },
+  { name: 'Second Card', order: 1, list_id: 3 },
+  { name: 'Third Card', order: 2, list_id: 3 },
+  { name: 'First Card', order: 0, list_id: 4 },
 ])
 
 Checklist.create([
-  { name: 'First Checklist', order: 1, card_id: 1 },
-  { name: 'Second Checklist', order: 2, card_id: 1 },
-  { name: 'First Checklist', order: 1, card_id: 2 },
-  { name: 'First Checklist', order: 1, card_id: 3 },
-  { name: 'First Checklist', order: 1, card_id: 4 }
+  { name: 'First Checklist', order: 0, card_id: 1 },
+  { name: 'Second Checklist', order: 1, card_id: 1 },
+  { name: 'First Checklist', order: 0, card_id: 2 },
+  { name: 'First Checklist', order: 0, card_id: 3 },
+  { name: 'First Checklist', order: 0, card_id: 4 }
 ])
 
 

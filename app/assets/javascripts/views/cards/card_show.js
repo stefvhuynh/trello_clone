@@ -22,6 +22,12 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
     this.$el.html(content);
     this.$el.attr('id', 'k' + this.model.id);
     this.renderChecklists();
+    
+    TrelloClone.Utilities.Order.bindSortable(
+      this.$('.checklists-list'),
+      this.model.checklists()
+    );
+    
     return this;
   },
   

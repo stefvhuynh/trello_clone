@@ -127,7 +127,6 @@ textarea {
 
 .sortable-active {
   transform: rotate(5deg);
-  box-shadow: 5px 5px 5px #555;
 }
 
 /* ----- Pages ----- */
@@ -263,18 +262,18 @@ textarea {
   border: 1px solid #8FACBF;
 }
 
-.list h3 {
+.list .list-top {
   padding: 10px;
   padding-bottom: 0;
 }
 
-.list h3:hover {
+.list .list-top:hover {
   cursor: move;
   cursor: -webkit-grab;
   cursor: -moz-grab;
 }
 
-.list h3:active {
+.list .list-top:active {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
 }
