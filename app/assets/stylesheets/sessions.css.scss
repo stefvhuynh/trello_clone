@@ -1,3 +1,52 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Session new
+
+.log-in-section {
+  padding: 50px 100px;
+}
+
+.log-in-section h1 {
+  margin-bottom: 20px;
+}
+
+.log-in-section h6 {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.log-in-section a {
+  text-decoration: underline;
+}
+
+.log-in-section a:hover {
+  color: #000;
+}
+
+.log-in-form {
+  width: 400px;
+}
+
+.log-in-form label {
+  font-size: 16px;
+  display: block;
+  margin: 5px 0;
+}
+
+.log-in-form input[type="text"],
+.log-in-form input[type="email"],
+.log-in-form input[type="password"] {
+  background: #eee;
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+}
+
+.guest-user {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+

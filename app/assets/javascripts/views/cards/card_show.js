@@ -6,6 +6,9 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   events: {
     'click .show-modal': 'showModal',
     'click .hide-modal': 'hideModal',
+    'click .edit-description': 'showEditDescriptionForm',
+    'click .edit-description-form .exit': 'hideEditDescriptionForm',
+    'submit .edit-description-form': 'updateCardDescription',
     'click .new-checklist-button': 'showNewChecklistForm',
     'click .new-checklist-form .exit': 'hideNewChecklistForm',
     'submit .new-checklist-form': 'submitNewChecklist'
@@ -13,8 +16,14 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   
   initialize: function() {
     this.subviews = [];
-    this.listenTo(this.model, 'sync change', this.render);
+    this.listenTo(this.model, 'sync change', this.renderWithModal);
     this.listenTo(this.model.checklists(), 'add remove', this.renderChecklists);
+  },
+  
+  renderWithModal: function() {
+    this.render();
+    this.showModal();
+    return this;
   },
   
   render: function() {
@@ -47,13 +56,31 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   },
   
   showModal: function(event) {
-    event.preventDefault();
+    if (event) event.preventDefault();
     this.$('.card-modal').removeClass('display-off');
   },
   
   hideModal: function(event) {
     event.preventDefault();
     this.$('.card-modal').addClass('display-off');
+  },
+  
+  showEditDescriptionForm: function(event) {
+    event.preventDefault();
+    this.$('.description-text').addClass('display-off');
+    this.$('.edit-description-form').removeClass('display-off');
+  },
+  
+  hideEditDescriptionForm: function(event) {
+    event.preventDefault();
+    this.$('.description-text').removeClass('display-off');
+    this.$('.edit-description-form').addClass('display-off');
+  },
+  
+  updateCardDescription: function(event) {
+    event.preventDefault();
+    var cardData = $(event.currentTarget).serializeJSON().card;
+    this.model.save(cardData, { patch: true });
   },
   
   showNewChecklistForm: function(event) {

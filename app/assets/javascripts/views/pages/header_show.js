@@ -4,7 +4,8 @@ TrelloClone.Views.HeaderShow = Backbone.View.extend({
   className: 'header-nav clear-fix',
 
   events: {
-    'click #new-board': 'renderBoardNew'
+    'click #new-board': 'renderBoardNew',
+    'click #show-profile': 'renderProfileShow'
   },
 
   render: function() {
@@ -16,6 +17,13 @@ TrelloClone.Views.HeaderShow = Backbone.View.extend({
   renderBoardNew: function(event) {
     event.preventDefault();
     var view = new TrelloClone.Views.BoardNew();
+    this.$('.right-dropdown').html(view.render().$el)
+      .removeClass('display-off');
+  },
+  
+  renderProfileShow: function(event) {
+    event.preventDefault();
+    var view = new TrelloClone.Views.ProfileShow();
     this.$('.right-dropdown').html(view.render().$el)
       .removeClass('display-off');
   }

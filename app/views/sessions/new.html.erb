@@ -1,10 +1,35 @@
-<form action="<%= session_url %>" method="POST">
-  <%= authenticity_token %>
-  <label for="session-email">Email:</label>
-  <input id="session-email" type="email" name="user[email]">
+<section class="log-in-section">
+  <h1>Log in to Trello</h1>
+
+  <form class="log-in-form" action="<%= session_url %>" method="POST">
+    <%= authenticity_token %>
+    <label for="session-email">Email</label>
+    <input id="session-email" type="email" name="user[email]">
   
-  <label for"session-password">Password:</label>
-  <input id="session-password" type="password" name="user[password]">
+    <label for"session-password">Password</label>
+    <input id="session-password" type="password" name="user[password]">
   
-  <button>Log In</button>
-</form>
+    <button class="green-button">Log In</button>
+  </form>
+  
+  <div class="guest-user green-button">Guest User</div>
+  
+  <h6>
+    Don't have an account? 
+    <a href="<%= new_user_url %>">
+      Create a Trello Account.
+    </a>
+  </h6>
+</section>
+
+<script>
+  $(document).ready(function() {
+    $('.guest-user').on('click', function(event) {
+      event.preventDefault();
+      $('#session-email').val('charlie@brown.com');
+      $('#session-password').val('123456');
+    });
+  });
+</script>
+
+

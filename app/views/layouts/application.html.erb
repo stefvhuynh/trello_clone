@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="home-page">
+  
+  <% if flash[:errors] %>
+    <%= render partial: 'layouts/errors', locals: { errors: flash[:errors]} %>
+  <% end %>
 
   <%= yield %>
 

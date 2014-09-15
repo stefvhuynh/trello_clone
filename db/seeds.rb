@@ -19,41 +19,38 @@ User.create([
 ])
 
 Board.create([
-  { name: 'First Board', starred: false, user_id: 1 },
-  { name: 'Second Board', starred: false, user_id: 1 },
-  { name: 'Linus Board', starred: false, user_id: 2 }
+  { name: 'School', starred: false, user_id: 1 },
+  { name: 'Home', starred: false, user_id: 1 },
+  { name: 'School', starred: false, user_id: 2 }
 ])
 
 List.create([
-  { name: 'First List', order: 0, board_id: 1 },
-  { name: 'Second List', order: 1, board_id: 1 },
-  { name: 'First List', order: 0, board_id: 2 },
-  { name: 'Linus List', order: 0, board_id: 3 },
+  { name: 'Football', order: 0, board_id: 1 },
+  { name: 'Homework', order: 1, board_id: 1 },
+  { name: 'Chores', order: 0, board_id: 2 },
+  { name: 'Homework', order: 0, board_id: 3 },
 ])
 
 Card.create([
-  { name: 'First Card', order: 0, list_id: 1 },
-  { name: 'Second Card', order: 1, list_id: 1 },
-  { name: 'First Card', order: 0, list_id: 2 },
-  { name: 'First Card', order: 0, list_id: 3 },
-  { name: 'Second Card', order: 1, list_id: 3 },
-  { name: 'Third Card', order: 2, list_id: 3 },
-  { name: 'First Card', order: 0, list_id: 4 },
+  { name: 'Kick football', order: 0, list_id: 1 },
+  { name: 'Math', order: 0, list_id: 2 },
+  { name: 'Reading', order: 1, list_id: 2 },
+  { name: 'Snoopy', order: 1, list_id: 3, description: 'My best friend!'},
+  { name: 'Floors', order: 2, list_id: 3 },
+  { name: 'Math', order: 0, list_id: 4 },
 ])
 
 Checklist.create([
-  { name: 'First Checklist', order: 0, card_id: 1 },
-  { name: 'Second Checklist', order: 1, card_id: 1 },
-  { name: 'First Checklist', order: 0, card_id: 2 },
-  { name: 'First Checklist', order: 0, card_id: 3 },
-  { name: 'First Checklist', order: 0, card_id: 4 }
+  { name: 'Just kick it!', order: 0, card_id: 1 },
+  { name: 'Play with Snoopy', order: 0, card_id: 4 },
+  { name: 'Feed Snoopy', order: 1, card_id: 4 }
 ])
 
 Item.create([
-  { name: 'First Item', order: 0, completed: false, checklist_id: 1 },
-  { name: 'Second Item', order: 1, completed: false, checklist_id: 1 },
-  { name: 'First Item', order: 0, completed: false, checklist_id: 2 },
-  { name: 'First Item', order: 0, completed: false, checklist_id: 3 },
-  { name: 'First Item', order: 0, completed: false, checklist_id: 4 }
+  { name: 'Run', order: 0, completed: false, checklist_id: 1 },
+  { name: 'Kick', order: 1, completed: false, checklist_id: 1 },
+  { name: 'Go on adventures', order: 0, completed: false, checklist_id: 2 },
+  { name: 'Retrieve food', order: 0, completed: false, checklist_id: 3 },
+  { name: 'Put food in bowl', order: 1, completed: false, checklist_id: 3 }
 ])
 

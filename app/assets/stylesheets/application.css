@@ -15,8 +15,8 @@
  *= require_self
  */
 
-html, body, div, section, h1, h2, h3, h4, 
-h5, h6, ul, li, a, input, textarea, button {
+html, body, div, section, h1, h2, h3, h4, h5, h6, 
+ul, li, a, label, input, textarea, button {
   padding: 0;
   border: 0;
   margin: 0;
@@ -37,6 +37,11 @@ body {
 
 .home-page {
   background: #fff;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 h2 {
@@ -62,6 +67,7 @@ h6 {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"],
 input[type="search"] {
   padding: 5px;
@@ -257,6 +263,23 @@ textarea {
   margin: 10px 0;
 }
 
+#site-header .log-out-button {
+  padding: 10px;
+  margin: 5px 0;
+}
+
+#site-header .log-out-button:hover {
+  background: #1777B1;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Site main */
+
+#content {
+  padding: 0 20px;
+}
+
 /* ----- Boards ----- */
 
 /* Board index */
@@ -419,7 +442,7 @@ textarea {
 }
 
 .card-modal .modal-main {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .card-modal .left-section {
@@ -440,22 +463,40 @@ textarea {
   overflow: scroll;
 }
 
-.card-modal .modal-content > h3,
-.card-modal .modal-content > h5,
-.card-modal .modal-content > h6 {
-  display: inline;
-}
-
 .card-modal .modal-content h3,
 .card-modal .modal-content h5,
 .card-modal .modal-content h6 {
   padding-left: 0;
 }
 
+.card-modal .modal-content .edit-description {
+  text-decoration: underline;
+}
+
+.card-modal .modal-content .edit-description:hover {
+  cursor: pointer;
+  color: #000;
+}
+
 .card-modal .modal-content > .exit {
   position: absolute;
   right: 15px;
   top: 0;
+}
+
+.card-modal .modal-content .description-text {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.edit-description-form {
+  margin: 10px 0;
+}
+
+.edit-description-form textarea {
+  border: 1px solid #aaa;
+  margin: 5px 0;
+  height: 100px;
 }
 
 /* ----- Checklists ----- */

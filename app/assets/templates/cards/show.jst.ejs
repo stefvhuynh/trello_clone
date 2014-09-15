@@ -7,15 +7,20 @@
     <span class="exit hide-modal">&times;</span>
     <h3>
       <%= card.escape('name') %> 
-      <h6> in list </h6> 
-      <h5> <%= card.escape('list_id') %></h5>
     </h3>
     
     <main class="modal-main clear-fix">
       <section class="left-section">
         <div class="description">
-          <h6>Description</h6>
-          <p><%= card.escape('description') %></p>
+          <h6>Description <span class="edit-description">Edit</span></h6>
+          <div class="description-text"><%= card.escape('description') %></div>
+          
+          <form class="edit-description-form display-off">
+            <textarea name="card[description]"><%= card.escape('description') %></textarea>
+            
+            <button class="green-button">Save</button>
+            <span class="exit">&times;</span>
+          </form>
         </div>
     
         <ul class="checklists-list"></ul>

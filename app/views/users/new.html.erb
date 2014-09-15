@@ -1,0 +1,24 @@
+<section class="log-in-section">
+  <h1>Create a Trello Account</h1>
+
+  <form class="log-in-form" action="<%= users_url %>" method="POST">
+    <%= authenticity_token %>
+    <label for="user-email">Name</label>
+    <input id="user-email" type="text" name="user[name]">
+    
+    <label for="user-email">Email</label>
+    <input id="user-email" type="email" name="user[email]">
+  
+    <label for"user-password">Password</label>
+    <input id="user-password" type="password" name="user[password]">
+  
+    <button class="green-button">Create New Account</button>
+  </form>
+  
+  <h6>
+    Already have an account? 
+    <a href="<%= new_session_url %>">
+      Log in.
+    </a>
+  </h6>
+</section>
