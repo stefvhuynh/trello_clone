@@ -3,5 +3,5 @@ TrelloClone.Models.Item = Backbone.Model.extend({
   
   toJSON: function() {
     return { item: _.clone(this.attributes) };
-  },
+  }
 });

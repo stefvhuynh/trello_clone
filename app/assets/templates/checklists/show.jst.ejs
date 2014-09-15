@@ -1,3 +1,13 @@
 <h3 class="checklist-name"><%= checklist.escape('name') %></h3>
 <div class="progress-bar"></div>
 <ul class="items-list"></ul>
+
+<div class="new-item">
+  <div class="new-item-button">Add an item...</div>
+  
+  <form class="new-item-form display-off">
+    <textarea name="item[name]" placeholder="Add an item..."></textarea>
+    <button class="green-button">Add</button>
+    <span class="exit">&times;</span>
+  </form>
+</div>

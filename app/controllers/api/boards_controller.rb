@@ -1,7 +1,9 @@
 class Api::BoardsController < ApplicationController
 
   def show
-    @board = Board.includes(lists: [cards: :checklists]).find(params[:id])
+    @board = Board.includes(
+      lists: [cards: [checklists: :items]]
+    ).find(params[:id])
 
     if @board.user_id == current_user.id
       render :show

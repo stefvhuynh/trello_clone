@@ -61,7 +61,18 @@ h6 {
   color: #777;
 }
 
+input[type="text"],
+input[type="password"],
+input[type="search"] {
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 textarea {
+  padding: 5px;
+  width: 100%;
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
@@ -309,10 +320,6 @@ textarea {
 
 .new-list-form input[type="text"] {
   background: #ccc;
-  padding: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 5px;
   border: 1px solid #aaa;
 }
 
@@ -359,6 +366,7 @@ textarea {
   height: 460px;
   margin-left: -350px;
   padding: 20px;
+  overflow: scroll;
 }
 
 .card-modal .modal-content > h3,
@@ -406,6 +414,10 @@ textarea {
 /* ----- Checklists ----- */
 
 /* Checklist show */
+
+.checklist {
+  padding: 5px 0;
+}
 
 .checklist-name:hover {
   cursor: move;
@@ -486,11 +498,7 @@ textarea {
 
 .new-checklist-form input[type="text"] {
   border: 1px solid #777;
-  border-radius: 5px;
   background: #ddd;
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
 }
 
 .new-checklist-form input[type="text"]:focus {
@@ -499,7 +507,47 @@ textarea {
   box-shadow: 0 0 5px #1774AA;
 }
 
+/* ----- Items ----- */
 
+/* Item show */
 
+.item {
+  padding: 5px 0;
+}
+
+.item:hover {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.item:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
+
+/* Item new */
+
+.new-item {
+  padding: 8px 0;
+}
+
+.new-item-button {
+  color: #777;
+}
+
+.new-item-button:hover {
+  cursor: pointer;
+}
+
+.new-item-form textarea {
+  height: 80px;
+  border: 1px solid #aaa;
+}
+
+.new-item-form textarea:focus {
+  border: 1px solid #135F93;
+  box-shadow: 0 0 5px #1774AA;
+}
 
 

@@ -54,9 +54,6 @@ Item.create([
   { name: 'Second Item', order: 1, completed: false, checklist_id: 1 },
   { name: 'First Item', order: 0, completed: false, checklist_id: 2 },
   { name: 'First Item', order: 0, completed: false, checklist_id: 3 },
-  { name: 'First Item', order: 0, completed: false, checklist_id: 4 },
+  { name: 'First Item', order: 0, completed: false, checklist_id: 4 }
 ])
-
-
-
 
