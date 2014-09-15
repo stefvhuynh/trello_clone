@@ -14,6 +14,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'debugger', group: [:development, :test]
 gem 'backbone-on-rails'
+gem 'rails_12factor'
 
 group :development do
   gem 'pry-rails'
