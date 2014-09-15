@@ -256,8 +256,12 @@ textarea {
   color: #fff;
 }
 
+.board-show-main {
+  white-space: nowrap;
+}
+
 .lists-list {
-  float: left;
+  display: inline-block;
 }
 
 /* ----- Lists ----- */
@@ -265,7 +269,8 @@ textarea {
 /* List show */
 
 .list {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   width: 250px;
   background: #ddd;
   margin: 20px 5px;
@@ -292,13 +297,14 @@ textarea {
 /* List new */
 
 .new-list {
-  float: right;
-  margin: 20px 0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 20px 5px;
 }
 
 .new-list-button {
   padding: 10px;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
   width: 230px;
   background: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.6);
