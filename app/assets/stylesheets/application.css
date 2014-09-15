@@ -220,15 +220,42 @@ textarea {
   cursor: text;
 }
 
-.site-header-right .right-dropdown {
-  clear: both;
-  position: absolute;
-  padding: 0;
+#site-header .right-dropdown {
   background: #fff;
-  border: 1px solid #ddd;
-  top: 20px;
-  right: 0;
+  position: absolute;
+  right: 5px;
+  top: 48px;
+  width: 280px;
   color: #000;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 5px #777;
+}
+
+#site-header .right-dropdown h6 {
+  border-bottom: 1px solid #777;
+  text-align: center;
+  padding-bottom: 5px;
+  font-weight: normal;
+}
+
+#site-header .right-dropdown .exit {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#site-header .right-dropdown .board-new-form {
+  margin-top: 10px;
+}
+
+#site-header .right-dropdown input[type="text"] {
+  background: #ddd;
+  border: 1px solid #aaa;
+  margin: 10px 0;
 }
 
 /* ----- Boards ----- */
@@ -258,9 +285,9 @@ textarea {
 
 /* Board new */
 
-.board-new-form {
+/*.board-new-form {
   color: #000;
-}
+}*/
 
 /* Board show */
 

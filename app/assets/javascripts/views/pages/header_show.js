@@ -1,7 +1,7 @@
 TrelloClone.Views.HeaderShow = Backbone.View.extend({
   template: JST['pages/header'],
   tagName: 'nav',
-  className: 'clear-fix',
+  className: 'header-nav clear-fix',
 
   events: {
     'click #new-board': 'renderBoardNew'
