@@ -11,6 +11,12 @@ TrelloClone.Views.ItemShow = Backbone.View.extend({
     var content = this.template({ item: this.model });
     this.$el.html(content);
     this.$el.attr('id', 'i' + this.model.id);
+    this.$('.item-checkbox').prop('checked', this.model.get('completed'));
+    
+    if (this.model.get('completed')) {
+      this.$('.item-name').addClass('completed-item');
+    }
+    
     return this;
   },
   

@@ -526,6 +526,12 @@ textarea {
   cursor: -moz-grabbing;
 }
 
+.completed-item {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #777;
+}
+
 /* Item new */
 
 .new-item {
