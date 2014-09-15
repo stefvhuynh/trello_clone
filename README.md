@@ -16,4 +16,4 @@ This was done using [JQueryUI](http://jqueryui.com). Whenever the user drags and
 an element, an AJAX request is sent to the server to update the current ordering of the 
 elements.
 
-Todo: Enable board sharing with other users
+Todo: Enable board sharing with other users and add search bar
