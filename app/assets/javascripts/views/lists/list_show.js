@@ -26,7 +26,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     });
     
     TrelloClone.Utilities.Order.bindSortable(
-      this.$('.cards-list'), 
+      this.$('.cards-list'),
       this.model.cards()
     );
     
