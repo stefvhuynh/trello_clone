@@ -68,6 +68,7 @@ input[type="search"] {
   border-radius: 5px;
   box-sizing: border-box;
   width: 100%;
+  display: block;
 }
 
 textarea {
@@ -76,11 +77,13 @@ textarea {
   background: #fff;
   box-sizing: border-box;
   border-radius: 5px;
+  display: block;
 }
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  height: 12px;
+  height: 10px;
+  width: 10px;
   border-radius: 10px;
   background: rgba(0, 0, 0, .2);
 }
@@ -248,10 +251,6 @@ textarea {
   font-weight: normal;
 }
 
-#site-header .right-dropdown .board-new-form {
-  margin-top: 10px;
-}
-
 #site-header .right-dropdown input[type="text"] {
   background: #ddd;
   border: 1px solid #aaa;
@@ -285,9 +284,9 @@ textarea {
 
 /* Board new */
 
-/*.board-new-form {
-  color: #000;
-}*/
+.board-new-form {
+  margin-top: 10px;
+}
 
 /* Board show */
 
@@ -342,6 +341,7 @@ textarea {
   vertical-align: top;
   margin: 20px 5px;
   margin-right: 0;
+  height: 200px;
 }
 
 .new-list-button {
@@ -373,6 +373,30 @@ textarea {
 
 /* ----- Cards ----- */
 
+/* Card new */
+
+.new-card-button {
+  color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+}
+
+.new-card-button:hover {
+  cursor: pointer;
+  background: #aaa;
+}
+
+.new-card textarea {
+  height: 80px;
+  width: 230px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.new-card button {
+  margin: 10px;
+  margin-top: 0;
+}
+
 /* Card show */
 
 .card-name {
@@ -400,7 +424,7 @@ textarea {
 
 .card-modal .left-section {
   float: left;
-  width: 500px;
+  width: 440px;
 }
 
 .card-modal .right-section {
@@ -409,9 +433,9 @@ textarea {
 }
 
 .card-modal .modal-content {
-  width: 660px;
-  height: 460px;
-  margin-left: -350px;
+  width: 600px;
+  height: 400px;
+  margin-left: -320px;
   padding: 20px;
   overflow: scroll;
 }
@@ -434,30 +458,6 @@ textarea {
   top: 0;
 }
 
-/* Card new */
-
-.new-card-button {
-  color: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-}
-
-.new-card-button:hover {
-  cursor: pointer;
-  background: #aaa;
-}
-
-.new-card textarea {
-  height: 80px;
-  width: 230px;
-  padding: 10px;
-  margin: 0 10px;
-}
-
-.new-card button {
-  margin: 10px;
-  margin-top: 0;
-}
-
 /* ----- Checklists ----- */
 
 /* Checklist show */
@@ -477,11 +477,28 @@ textarea {
   cursor: -moz-grabbing;
 }
 
-.checklist .progress-bar {
+.progress-bar {
   margin: 15px 0;
   height: 10px;
   border-radius: 5px;
   background: #ccc;
+}
+
+.progress-bar-unit {
+  float: left;
+  height: 10px;
+}
+
+.progress-bar-unit-left {
+  border-radius: 5px 0 0 5px;
+}
+
+.progress-bar-unit-right {
+  border-radius: 0 5px 5px 0;
+}
+
+.progress-bar-unit-completed {
+  background: green;
 }
 
 /* Checklist new */

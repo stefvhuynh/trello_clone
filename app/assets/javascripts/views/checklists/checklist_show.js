@@ -25,6 +25,8 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
       that.$('.items-list').append(that.renderItem(item));
     });
     
+    this.fillProgressBar(this.model.items());
+    
     TrelloClone.Utilities.Order.bindSortable(
       this.$('.items-list'),
       this.model.items()
@@ -37,6 +39,28 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
     var subview = new TrelloClone.Views.ItemShow({ model: item });
     this.subviews.push(subview);
     return subview.render().$el;
+  },
+  
+  fillProgressBar: function(items) {    
+    var unitWidth = this.$('.progress-bar').width() / items.length;
+    var completedUnits = items.where({ completed: true }).length;
+    
+    for (var i = 0; i < items.length; i++) {
+      $progressBarUnit = $('<div class="progress-bar-unit"></div>');
+      $progressBarUnit.width(unitWidth);
+      
+      if (i === 0) {
+        $progressBarUnit.addClass('progress-bar-unit-left');
+      } else if (i === items.length - 1) {
+        $progressBarUnit.addClass('progress-bar-unit-right');
+      }
+      
+      if (i < completedUnits) {
+        $progressBarUnit.addClass('progress-bar-unit-completed');
+      }
+      
+      this.$('.progress-bar').append($progressBarUnit);
+    }    
   },
   
   showNewItemForm: function(event) {
