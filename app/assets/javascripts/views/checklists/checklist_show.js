@@ -25,6 +25,7 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
       that.$('.items-list').append(that.renderItem(item));
     });
     
+    this.$('.progress-bar').width(440);
     this.fillProgressBar(this.model.items());
     
     TrelloClone.Utilities.Order.bindSortable(
@@ -41,7 +42,7 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
     return subview.render().$el;
   },
   
-  fillProgressBar: function(items) {    
+  fillProgressBar: function(items) {
     var unitWidth = this.$('.progress-bar').width() / items.length;
     var completedUnits = items.where({ completed: true }).length;
     
