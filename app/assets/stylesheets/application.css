@@ -441,6 +441,10 @@ textarea {
   cursor: -moz-grabbing;
 }
 
+.card-modal {
+  z-index: 100;
+}
+
 .card-modal .modal-main {
   margin-top: 15px;
 }

@@ -1,53 +1,53 @@
 <div class="card-name show-modal"><%= card.escape('name') %></div>
 
-<div class="card-modal modal display-off">
+<!-- <div class="card-modal modal display-off">
   <div class="modal-overlay hide-modal"></div>
-  
+
   <div class="modal-content">
     <span class="exit hide-modal">&times;</span>
     <h3>
-      <%= card.escape('name') %> 
+      <%= card.escape('name') %>
     </h3>
-    
+
     <main class="modal-main clear-fix">
       <section class="left-section">
         <div class="description">
           <h6>Description <span class="edit-description">Edit</span></h6>
           <div class="description-text"><%= card.escape('description') %></div>
-          
+
           <form class="edit-description-form display-off">
             <textarea name="card[description]"><%= card.escape('description') %></textarea>
-            
+
             <button class="green-button">Save</button>
             <span class="exit">&times;</span>
           </form>
         </div>
-    
+
         <ul class="checklists-list"></ul>
       </section>
-    
+
       <section class="right-section">
         <h3>Add</h3>
         <ul>
           <li class="new-checklist">
             <div class="new-checklist-button">Checklist</div>
-            
+
             <form class="new-checklist-form display-off">
               <h6>Add Checklist</h6>
               <span class="exit">&times;</span>
-              
+
               <label for="new-checklist-title">Title</label>
-              <input id="new-checklist-title" 
-                type="text" 
+              <input id="new-checklist-title"
+                type="text"
                 name="checklist[name]"
                 placeholder="Add a checklist...">
-                
+
               <button class="green-button">Add</button>
             </form>
           </li>
         </ul>
       </section>
     </main>
-    
+
   </div>
-</div>
+</div> -->
