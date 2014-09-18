@@ -11,7 +11,6 @@ TrelloClone.Utilities.Order = {
       },
       
       update: function(event, ui) {
-
         var newOrder = $(this).sortable('toArray').map(function(order) {
           return parseInt(order.slice(1));
         });

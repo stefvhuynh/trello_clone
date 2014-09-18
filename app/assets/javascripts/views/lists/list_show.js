@@ -19,7 +19,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     var that = this;
     var content = this.template({ list: this.model });
     this.$el.html(content);
-    this.$el.attr('id', 'l' + this.model.id);
+    this.$el.attr('id', this.model.elId);
     
     this.model.cards().each(function(card) {
       that.$('.cards-list').append(that.renderCard(card));
@@ -29,6 +29,10 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
       this.$('.cards-list'),
       this.model.cards()
     );
+        
+    // this.$('.cards-list').sortable({
+    //   connectWith: '.cards-list'
+    // });
     
     return this;
   },

@@ -344,6 +344,8 @@ textarea {
 .list .list-top {
   padding: 10px;
   padding-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .list .list-top:hover {
@@ -355,6 +357,10 @@ textarea {
 .list .list-top:active {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
+}
+
+.cards-list {
+  min-height: 20px;
 }
 
 /* List new */
