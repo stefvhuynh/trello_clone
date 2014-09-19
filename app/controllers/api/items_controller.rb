@@ -21,6 +21,13 @@ class Api::ItemsController < ApplicationController
   end
   
   def destroy
+    @item = Item.find(params[:id])
+    
+    if @item.destroy
+      render :show, status: 200
+    else
+      render json: @item.errors.full_messages, status: 404
+    end
   end
   
   private

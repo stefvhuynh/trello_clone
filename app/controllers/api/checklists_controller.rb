@@ -21,6 +21,13 @@ class Api::ChecklistsController < ApplicationController
   end
   
   def destroy
+    @checklist = Checklist.find(params[:id])
+    
+    if @checklist.destroy
+      render :show, status: 200
+    else
+      render json: @checklist.errors.full_messages, status: 404
+    end
   end
   
   private

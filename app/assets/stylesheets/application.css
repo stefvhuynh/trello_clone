@@ -145,6 +145,65 @@ textarea {
   background: #1D7D15;
 }
 
+.dropdown-button {
+  float: right;
+  color: #999;
+  font-size: 16px;
+}
+
+.dropdown-button:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  bottom: -65px;
+  right: -70px;
+  background: #fff;
+  width: 100px;
+  z-index: 99;
+  padding: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.dropdown .exit {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.dropdown ul {
+  border-top: 1px solid #ddd;
+  margin-top: 5px;
+}
+
+.dropdown li {
+  padding: 10px 0;
+}
+
+.dropdown li:hover {
+  background: #1777B1;
+  cursor: pointer;
+  color: #fff;
+}
+
+.delete {
+  float: right;
+  color: #999;
+  text-decoration: underline;
+}
+
+.delete:hover {
+  color: #000;
+  cursor: pointer;
+}
+
 /* Utilities */
 
 .clear-fix:after {
@@ -341,20 +400,31 @@ textarea {
   border: 1px solid #8FACBF;
 }
 
-.list .list-top {
+.list-top {
+  position: relative;
   padding: 10px;
   padding-bottom: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.list .list-top:hover {
+.list-top .dropdown {
+  bottom: -70px;
+  right: -80px;
+}
+
+.list-top .list-name-text {
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+}
+
+.list-top:hover {
   cursor: move;
   cursor: -webkit-grab;
   cursor: -moz-grab;
 }
 
-.list .list-top:active {
+.list-top:active {
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
 }
@@ -428,12 +498,21 @@ textarea {
 
 /* Card show */
 
+.card {
+  position: relative;
+}
+
 .card-name {
   padding: 10px;
   background: #fff;
   margin: 10px;
   border-radius: 5px;
   box-shadow: 0 1px 0 #bbb;
+}
+
+.card-name-text {
+  width: 200px;
+  float: left;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -517,6 +596,10 @@ textarea {
 
 .checklist {
   padding: 5px 0;
+}
+
+.checklist-name-text {
+  float: left;
 }
 
 .checklist-name:hover {
@@ -630,6 +713,7 @@ textarea {
 
 .item {
   padding: 5px 0;
+  position: relative;
 }
 
 .item:hover {

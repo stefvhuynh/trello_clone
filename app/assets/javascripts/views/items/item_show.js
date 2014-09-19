@@ -1,10 +1,11 @@
 TrelloClone.Views.ItemShow = Backbone.View.extend({
   template: JST['items/show'],
   tagName: 'li',
-  className: 'item',
+  className: 'item clear-fix',
   
   events: {
-    'click .item-checkbox': 'updateItemCompleted'
+    'click .item-checkbox': 'updateItemCompleted',
+    'click .delete-item': 'deleteItem'
   },
   
   render: function() {
@@ -24,5 +25,10 @@ TrelloClone.Views.ItemShow = Backbone.View.extend({
     this.model.save({ completed: event.currentTarget.checked }, { 
       patch: true 
     });
+  },
+  
+  deleteItem: function(event) {
+    event.preventDefault();
+    this.model.destroy();
   }
 });

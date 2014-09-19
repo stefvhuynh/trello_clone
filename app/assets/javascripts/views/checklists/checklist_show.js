@@ -6,7 +6,8 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
   events: {
     'click .new-item-button': 'showNewItemForm',
     'click .new-item .exit': 'hideNewItemForm',
-    'submit .new-item-form': 'submitNewItem'
+    'submit .new-item-form': 'submitNewItem',
+    'click .delete-checklist': 'deleteChecklist'
   },
   
   initialize: function() {
@@ -89,6 +90,11 @@ TrelloClone.Views.ChecklistShow = Backbone.View.extend({
     itemData.checklist_id = this.model.id;
     itemData.completed = false;
     this.model.items().create(itemData, { wait: true });
+  },
+  
+  deleteChecklist: function(event) {
+    event.preventDefault();
+    this.model.destroy();
   },
   
   remove: function() {

@@ -21,6 +21,13 @@ class Api::CardsController < ApplicationController
   end
   
   def destroy
+    @card = Card.find(params[:id])
+    
+    if @card.destroy
+      render :show, status: 200
+    else
+      render json: @card.errors.full_messages, status: 404
+    end
   end
   
   private

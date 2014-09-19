@@ -1,1 +1,11 @@
-<div class="card-name show-modal"><%= card.escape('name') %></div>
+<div class="card-name show-modal clear-fix">
+  <span class="card-name-text"><%= card.escape('name') %></span>
+  <span class="dropdown-button">&or;</span>
+</div>
+
+<div class="dropdown display-off">
+  <h6>Action<span class="exit">&times;</span></h6>
+  <ul>
+    <li class="delete-card">Delete</li>
+  </ul>
+</div>

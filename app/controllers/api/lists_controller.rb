@@ -21,6 +21,13 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
+    @list = List.find(params[:id])
+    
+    if @list.destroy
+      render :show, status: 200
+    else
+      render json: @list.errors.full_messages, status: 404
+    end
   end
 
   private

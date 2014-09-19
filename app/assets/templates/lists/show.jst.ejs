@@ -1,4 +1,15 @@
-<h3 class="list-top"><%= list.escape('name') %></h3>
+<div class="list-top clear-fix">
+  <h3 class="list-name-text"><%= list.escape('name') %></h3>
+  <span class="dropdown-button">&or;</span>
+  
+  <div class="list-dropdown dropdown display-off">
+    <h6>Action<span class="exit">&times;</span></h6>
+    <ul>
+      <li class="delete-list">Delete</li>
+    </ul>
+  </div>
+</div>
+
 <ul class="cards-list"></ul>
 
 <div class="new-card">
