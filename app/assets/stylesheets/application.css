@@ -204,6 +204,16 @@ textarea {
   cursor: pointer;
 }
 
+.loading {
+  text-align: center;
+  padding: 10px;
+}
+
+.loading-img {
+  height: 50px;
+  width: 50px;
+}
+
 /* Utilities */
 
 .clear-fix:after {
